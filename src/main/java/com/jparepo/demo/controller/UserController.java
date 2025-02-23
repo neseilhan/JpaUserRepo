@@ -38,6 +38,7 @@ public class UserController {
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User newUser = userRepository.save(user);
+        System.out.println("Saved User: " + newUser);
         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
     }
 
